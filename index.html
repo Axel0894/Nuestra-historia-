@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia</title>
+    <style>
+        /* ==========================================================================
+           ESTILOS BASE - ESTILO SOBRIO Y EDITORIAL
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #1a1a1a; /* Fondo oscuro y elegante */
+            color: #f5f5f5;
+            line-height: 1.7;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 750px;
+            width: 100%;
+        }
+
+        /* Encabezado Principal */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #f1c40f; /* Dorado sutil */
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #999;
+        }
+
+        /* Estructura de la Historia (Capítulos) */
+        .chapter {
+            margin-bottom: 70px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        /* Retraso de animación para una entrada fluida */
+        .chapter:nth-child(1) { animation-delay: 0.2s; }
+        .chapter:nth-child(2) { animation-delay: 0.6s; }
+        .chapter:nth-child(3) { animation-delay: 1s; }
+
+        .chapter-meta {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #f1c40f;
+            margin-bottom: 12px;
+        }
+
+        .chapter-title {
+            font-size: 1.9rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================================================
+           GALERÍA ANIMADA (4 FOTOS)
+           ========================================================================== */
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            margin: 30px 0;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+
+        .gallery-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slideSequence 16s infinite ease-in-out;
+        }
+
+        /* Rutas locales en tu celular */
+        .slide-1 {
+            background-image: url('foto1.jpg');
+            animation-delay: 0s;
+        }
+        .slide-2 {
+            background-image: url('foto2.jpg');
+            animation-delay: 4s;
+        }
+        .slide-3 {
+            background-image: url('foto3.jpg');
+            animation-delay: 8s;
+        }
+        .slide-4 {
+            background-image: url('foto4.jpg');
+            animation-delay: 12s;
+        }
+        
+        .chapter-text {
+            font-size: 1.15rem;
+            color: #cccccc;
+            text-align: justify;
+            margin-top: 25px;
+            text-justify: inter-word;
+        }
+
+        /* Dedicatoria Musical */
+        .song-dedication {
+            text-align: center;
+            margin: 60px 0 20px 0;
+            padding: 20px;
+            border-left: 2px solid #f1c40f;
+            border-right: 2px solid #f1c40f;
+        }
+
+        .song-quote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #f1c40f;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .song-author {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        /* Botón de YouTube Elegante */
+        .youtube-btn-container {
+            text-align: center;
+            margin: 25px 0 40px 0;
+        }
+
+        .youtube-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            color: #f1c40f;
+            border: 1px solid #f1c40f;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1rem;
+            font-style: italic;
+            text-decoration: none;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+        }
+
+        .youtube-btn:hover {
+            background-color: #f1c40f;
+            color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+            cursor: pointer;
+        }
+
+        /* Nota de Cierre */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            font-style: italic;
+            color: #777;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideSequence {
+            0%, 5%, 25%, 100% { opacity: 0; }
+            10%, 20% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Nuestra Historia</h1>
+            <p>Un recorrido por el tiempo, el compromiso y lo que es real.</p>
+        </header>
+
+        <main>
+            <section class="chapter">
+                <div class="chapter-meta">Capítulo I — El Inicio</div>
+                <h2 class="chapter-title">Donde todo coincidió</h2>
+                
+                <div class="gallery-container">
+                    <div class="gallery-slide slide-1"></div>
+                    <div class="gallery-slide slide-2"></div>
+                    <div class="gallery-slide slide-3"></div>
+                    <div class="gallery-slide slide-4"></div>
+                </div>
+
+                <p class="chapter-text">
+                    Nuestra historia no es como todas las demás, la nuestra es única y diferente; todo comenzó siendo amigos, nos llevamos muy bien y conectamos al instante; con el paso del tiempo fuimos agarrando más confianza y cariño pero teníamos caminos diferentes.
+                </p>
+            </section>
+
+            <section class="chapter">
+                <div class="chapter-meta">Capítulo II — El Comienzo</div>
+                <h2 class="chapter-title">El día que cambió nuestro rumbo</h2>
+                
+                <p class="chapter-text">
+                    Nuestra historia comenzó formalmente el 5 de noviembre de 2025, el día en que decidí romper el silencio y expresarte todo lo que guardaba por ti. Recuerdo los nervios y la incertidumbre de no saber qué pasaría, hasta que tu respuesta llegó de forma clara y concisa. En ese instante experimenté una tranquilidad inmensa y una felicidad absoluta: habías dicho que sí a ser novios. Ese fue el verdadero inicio de nuestro camino.
+                </p>
+                
+                <p class="chapter-text">
+                    El verdadero amor no se trata únicamente de la emoción del primer momento, sino de la decisión consciente y diaria de cuidarse, apoyarse en las risas y sostenerse firmemente en los días difíciles. Es el compromiso real de avanzar juntos, valorando cada virtud y abrazando cada defecto.
+                </p>
+            </section>
+
+            <section class="chapter">
+                <div class="chapter-meta">Capítulo III — El Camino</div>
+                <h2 class="chapter-title">Hacia el futuro</h2>
+                <p class="chapter-text">
+                    Después de seis meses con tropiezos, con caídas y con momentos de incertidumbre seguimos juntos; seguimos mejorando el uno por el otro, seguimos construyendo un futuro, algo que nos dure toda una vida. Gracias por todo el amor que me das, que me demuestras y por tu tiempo. En verdad, TE AMO DEMASIADO.
+                </p>
+            </section>
+        </main>
+
+        <div class="song-dedication">
+            <p class="song-quote">"Porque perderte es vivir sin mi propia esencia."</p>
+            <p class="song-author">— Esencia, Humbe</p>
+        </div>
+
+        <div class="youtube-btn-container">
+            <a href="https://youtu.be/ovWrLYddWvc?si=shMAv6nof5F3cKkx" target="_blank" class="youtube-btn">Escuchar nuestra canción</a>
+        </div>
+
+        <div style="text-align: center; font-size: 1.4rem; color: #f1c40f; letter-spacing: 6px; margin: 20px 0 10px 0; font-weight: 300; font-style: italic;">
+            K & A
+        </div>
+
+        <footer>
+            <p>Con amor, hoy y siempre.</p>
+        </footer>
+        
+    </div>
+
+</body>
+</html>
